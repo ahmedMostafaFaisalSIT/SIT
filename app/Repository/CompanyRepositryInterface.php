@@ -5,6 +5,6 @@ interface CompanyRepositryInterface {
     public function index();
     public function store(Request $request);
     public function update(Request $request);
-    public function destroy($id);
+    public function destroy(Request $request);
 }
 ?>

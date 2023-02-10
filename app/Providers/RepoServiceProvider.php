@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Repository\CompanyRepository;
 use Illuminate\Support\ServiceProvider;
+use App\Repository\CompanyRepositryInterface;
 
 class RepoServiceProvider extends ServiceProvider
 {
@@ -13,8 +15,8 @@ class RepoServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(CompanyRepositryInterface::class,CompanyRepositry::class);
-        
+        $this->app->bind(CompanyRepositryInterface::class,CompanyRepository::class);
+
     }
 
     /**

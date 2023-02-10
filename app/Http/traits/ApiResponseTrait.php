@@ -1,5 +1,6 @@
 <?php
-namespace App\Http\traits\ApiResponseTrait;
+namespace App\Http\traits;
+
 trait ApiResponseTrait{
 public function apiresponse($data=null,$message=null,$status=null){
     $array=[

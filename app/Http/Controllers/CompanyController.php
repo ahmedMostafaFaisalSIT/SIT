@@ -2,59 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\CompanyRepositryInterface;
 use Illuminate\Http\Request;
-use App\Repository\CompanyRepositoryInterface;
+
 
 class CompanyController extends Controller
 {
     protected $Companies;
 
-    public function __construct(CompanyRepositoryInterface $Companies)
+    public function __construct(CompanyRepositryInterface $Companies)
     {
         $this->Companies = $Companies;
     }
 
-
     public function index()
     {
-        return $this->Posts->index();
+        return $this->Companies->index();
+    }
+    public function store(Request $request)
+    {
+        return $this->Companies->store($request);
     }
 
-
-    public function create()
-    {
-        return $this->Posts->create();
-    }
-
-
-    public function store(StorePostRequest $request)
-    {
-        return $this->Posts->store($request);
-    }
-
-
-    public function show(Post $post)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        return $this->Posts->edit($id);
-    }
-
-
-    public function update(StorePostRequest $request, $id)
+    public function update(Request $request)
     {
 
-        return $this->Posts->update($request,$id);
+        return $this->Companies->update($request);
 
     }
 
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        return $this->Posts->destroy($id);
+        return $this->Companies->destroy($request);
     }
 }
